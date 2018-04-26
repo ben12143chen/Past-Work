@@ -1,0 +1,61 @@
+//A volunteer time record management system needs to keep track of volunteer Events
+
+//Ethereum addresses can be thought of as primary keys, as they are uniquely linked to individuals or
+
+//organizations
+
+struct organization {
+
+    address,
+
+    string name
+
+}
+
+mapping (address => string) organizations; //maps organization addresses to their name
+
+mapping (uint256 => volunteerEvent) events;
+
+A volunteerEvent struct is needed with the following attributes:
+
+struct volunteerEvent {
+
+    uint256 id,
+
+    address owner,
+
+    string name, 
+
+    string description,
+
+    bool confirmed,
+
+    bool active,
+
+    volunteers[] //this will keep track of people interested in the event
+
+}
+
+//returns all the events a volunteer is found in
+
+//another mapping may be neccesary declared at top
+
+function getEventsByVolunteer(volunteer_address) {
+
+    
+
+}
+
+function activateEvent(volunteerEvent.id){
+
+    //owner needs to be msg.sender, as if they own the event, they can change it
+
+    //set active to true
+
+}
+
+function register(volunteerEvent.id) {
+
+    //pushes the msg.sender (a volunteer) to volunteerEvent.volunteers[]
+
+}
